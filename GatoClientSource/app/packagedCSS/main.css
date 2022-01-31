@@ -20,7 +20,7 @@
     position:fixed;
     background-color:#0000003b;
     padding: 10px 10px;
-    content: "Gatoclient by creepycatsttv";
+    content: "lyxcomp";
     width:370px;
     bottom: -0.8%;
     left: 50%;
@@ -34,7 +34,7 @@
 #mapInfo::before {
     visibility: visible;
     z-index:100;
-    content: 'Gatoclient | ';
+    content: 'lyxcomp | ';
     width:600px;
 	bottom: 75px;
 	font-size:20px;
@@ -49,28 +49,28 @@
 	animation-iteration-count:infinite
 }
 
-#gatoMenuItem > img.menBtnIcn {
+#lyxcompMenuItem > img.menBtnIcn {
     -webkit-user-select: none;
     -webkit-user-drag: none;
     -webkit-app-region: no-drag;
 }
 
 /* Gatoclient Badges */
-#gatoDeveloper::before{
+#lyxcompDeveloper::before{
 	background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905274946846790/gatobadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0);
 }
-#gatoQT::before{
+#lyxcompQT::before{
 	background-image: url(https://cdn.discordapp.com/emojis/903049364304461834.png?size=96); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0);
 }
-#gatoCC::before{
+#lyxcompCC::before{
 	background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905273302683678/ccbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0);
 }
-#gatoKDev::before{
+#lyxcompKDev::before{
 	background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905273839583283/devbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0);
 }
-#gatoWinner::before{
+#lyxcompWinner::before{
 	background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905270349889618/winnerbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0);
 }
-#gatoRanked::before{
+#lyxcompRanked::before{
 	background-image: url(https://cdn.discordapp.com/emojis/902679654073241630.png?size=96); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0);
 }

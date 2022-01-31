@@ -8,9 +8,9 @@ window.OffCliV = true;
 
 var elements = {};
 
-const settingsMenuHTML = '<link rel="stylesheet" href="https://creepycats.github.io/api/gatoclient/settings.css"><div class="backgroundSettings"><div class="titleHolder"> <img src="https://cdn.discordapp.com/attachments/901905234861883432/907024700880879686/0.png" class="titleImage" width="140" height="140"> <h3 class="title">Gatoclient Settings</h3> </div> <div class="container"> <div id="content"> <form id="gatoclientsettings" action=""> <div> <h2>Client Settings</h2> <p> <span>Uncap FPS</span> <label for="fpsUncap"></label> <span> <input type="checkbox" class="switch_1" name="fpsUncap" value="true" id="fpsUncap"> </span> </p> <p> <span>ANGLE Backend</span> <label for="angle-backend"></label> <span class="select-dropdown"> <select name="angle-backend" id="angle-backend" class="gatoSettingsDropdown"> <option value="default">Default</option> <option value="gl">OpenGL</option> <option value="d3d11">D3D11</option> <option value="d3d9">D3D9</option> <option value="d3d11on12">D3D11 on 12</option> <option value="vulkan">Vulkan</option> </select> </span> </p> <p>ReCaptcha Error Fix - F7</p><p>Remove stupid ranked stream - F8</p><p> <span>Remove Chromium Features (Unstable)</span> <label for="removeUselessFeatures"></label> <span> <input type="checkbox" class="switch_1" name="removeUselessFeatures" value="false" id="removeUselessFeatures"> </span> </p> <p> <span>In Process GPU</span> <label for="inProcessGPU"></label> <span> <input type="checkbox" class="switch_1" name="inProcessGPU" value="false" id="inProcessGPU"> </span> </p> <p> <span>Disable Accelerated 2D Canvas</span> <label for="disableAccelerated2D"></label> <span> <input type="checkbox" class="switch_1" name="disableAccelerated2D" value="false" id="disableAccelerated2D"> </span> </p> <p> <span>Fullscreen Automatically</span> <label for="fullscreen"></label> <span> <input type="checkbox" class="switch_1" name="fullscreen" value="false" id="fullscreen"> </span> </p> <p> <span>Discord RPC</span> <label for="discordrpc"></label> <span> <input type="checkbox" class="switch_1" name="discordrpc" value="false" id="discordrpc"> </span> </p> <p> <span>Disable User Badges</span> <label for="disableUserBadges"></label> <span> <input type="checkbox" class="switch_1" name="disableUserBadges" value="false" id="disableUserBadges"> </span> </p> <p> <span>Disable Emotes / Commands</span> <label for="disableEmotes"></label> <span> <input type="checkbox" class="switch_1" name="disableEmotes" value="false" id="disableEmotes"> </span> </p> <p> <span>Disable Settings Button</span> <label for="disableGatoButton"></label> <span> <input type="checkbox" class="switch_1" name="disableGatoButton" value="false" id="disableGatoButton"> </span> </p> </div> <div> <h2>CSS/Swap Settings</h2> <p> <span>Resource Swapper</span> <label for="resourceSwapper"></label> <span> <input type="checkbox" class="switch_1" name="resourceSwapper" value="false" id="resourceSwapper"> </span> </p> <p> <span>Resource Swapper Folder: Documents/GatoclientResourceSwapper</span> </p> <p> <span>Disable Gatoclient Logo</span> <label for="disableLogoCSS"></label> <span> <input type="checkbox" class="switch_1" name="disableLogoCSS" value="false" id="disableLogoCSS"> </span> </p> <p> <span>Disable Menu Timer</span> <label for="disableMenuTimer"></label> <span> <input type="checkbox" class="switch_1" name="disableMenuTimer" value="false" id="disableMenuTimer"> </span> </p> </div> <div> <h2>Modules</h2>  <p> <span>Custom Billboards</span> <label for="advancedBillboard"></label> <span> <input type="checkbox" class="switch_1" name="advancedBillboard" value="true" id="advancedBillboard"> </span> </p> <p>To use this, open the Billboard Editor with the button below, generate your billboard, and copy the output into the field below (REQUIRES RESOURCE SWAPPER)</p> <p> <span>Billboard Data</span> <label for="advancedBillboardData"></label> <span> <input type="text" class="form__input" placeholder="data:image/png" name="advancedBillboardData" value=""> </span> </p> <p> <button id="openBillboardEditor" class="button style" type="button">Open the Billboard Editor</button> </p><p>_________________________________________________________________</p> <p> <span>F4 - Auto Matchmaker</span> <label for="autoFFA"></label> <span> <input type="checkbox" class="switch_1" name="autoFFA" value="false" id="autoFFA"> </span> </p> <p> <span>Auto Matchmaker Gamemode</span> <label for="matchmakerGamemode"></label> <span class="select-dropdown"> <select name="matchmakerGamemode" id="matchmakerGamemode" class="gatoSettingsDropdown"> <option value="0">FFA</option> <option value="1">TDM</option> <option value="2">Point</option> <option value="3">CTF</option> <option value="19">KC</option> <option value="27">Kranked</option> <option value="10">Gun Game</option> <option value="21">Sharp Shooter</option> </select> </span> </p> <p> <span>Matchmaker Minimum Players</span> <label for="matchmakerMinPlayer"></label> <span class="select-dropdown"> <select name="matchmakerMinPlayer" id="matchmakerMinPlayer" class="gatoSettingsDropdown"> <option value="0">0</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> </select> </span> </p> </div> </form> </div> </div> </div>';
+const settingsMenuHTML = '<link rel="stylesheet" href="https://lyxzy.github.io/api/lyxcomp/settings.css"><div class="backgroundSettings"><div class="titleHolder"> <img src="https://cdn.discordapp.com/attachments/901905234861883432/907024700880879686/0.png" class="titleImage" width="140" height="140"> <h3 class="title">lyxcomp Settings</h3> </div> <div class="container"> <div id="content"> <form id="lyxcompsettings" action=""> <div> <h2>Client Settings</h2> <p> <span>Uncap FPS</span> <label for="fpsUncap"></label> <span> <input type="checkbox" class="switch_1" name="fpsUncap" value="true" id="fpsUncap"> </span> </p> <p> <span>ANGLE Backend</span> <label for="angle-backend"></label> <span class="select-dropdown"> <select name="angle-backend" id="angle-backend" class="lyxcompSettingsDropdown"> <option value="default">Default</option> <option value="gl">OpenGL</option> <option value="d3d11">D3D11</option> <option value="d3d9">D3D9</option> <option value="d3d11on12">D3D11 on 12</option> <option value="vulkan">Vulkan</option> </select> </span> </p> <p>ReCaptcha Error Fix - F7</p><p>Remove stupid ranked stream - F8</p><p> <span>Remove Chromium Features (Unstable)</span> <label for="removeUselessFeatures"></label> <span> <input type="checkbox" class="switch_1" name="removeUselessFeatures" value="false" id="removeUselessFeatures"> </span> </p> <p> <span>In Process GPU</span> <label for="inProcessGPU"></label> <span> <input type="checkbox" class="switch_1" name="inProcessGPU" value="false" id="inProcessGPU"> </span> </p> <p> <span>Disable Accelerated 2D Canvas</span> <label for="disableAccelerated2D"></label> <span> <input type="checkbox" class="switch_1" name="disableAccelerated2D" value="false" id="disableAccelerated2D"> </span> </p> <p> <span>Fullscreen Automatically</span> <label for="fullscreen"></label> <span> <input type="checkbox" class="switch_1" name="fullscreen" value="false" id="fullscreen"> </span> </p> <p> <span>Discord RPC</span> <label for="discordrpc"></label> <span> <input type="checkbox" class="switch_1" name="discordrpc" value="false" id="discordrpc"> </span> </p> <p> <span>Disable User Badges</span> <label for="disableUserBadges"></label> <span> <input type="checkbox" class="switch_1" name="disableUserBadges" value="false" id="disableUserBadges"> </span> </p> <p> <span>Disable Emotes / Commands</span> <label for="disableEmotes"></label> <span> <input type="checkbox" class="switch_1" name="disableEmotes" value="false" id="disableEmotes"> </span> </p> <p> <span>Disable Settings Button</span> <label for="disablelyxcompButton"></label> <span> <input type="checkbox" class="switch_1" name="disablelyxcompButton" value="false" id="disablelyxcompButton"> </span> </p> </div> <div> <h2>CSS/Swap Settings</h2> <p> <span>Resource Swapper</span> <label for="resourceSwapper"></label> <span> <input type="checkbox" class="switch_1" name="resourceSwapper" value="false" id="resourceSwapper"> </span> </p> <p> <span>Resource Swapper Folder: Documents/lyxcompResourceSwapper</span> </p> <p> <span>Disable lyxcomp Logo</span> <label for="disableLogoCSS"></label> <span> <input type="checkbox" class="switch_1" name="disableLogoCSS" value="false" id="disableLogoCSS"> </span> </p> <p> <span>Disable Menu Timer</span> <label for="disableMenuTimer"></label> <span> <input type="checkbox" class="switch_1" name="disableMenuTimer" value="false" id="disableMenuTimer"> </span> </p> </div> <div> <h2>Modules</h2>  <p> <span>Custom Billboards</span> <label for="advancedBillboard"></label> <span> <input type="checkbox" class="switch_1" name="advancedBillboard" value="true" id="advancedBillboard"> </span> </p> <p>To use this, open the Billboard Editor with the button below, generate your billboard, and copy the output into the field below (REQUIRES RESOURCE SWAPPER)</p> <p> <span>Billboard Data</span> <label for="advancedBillboardData"></label> <span> <input type="text" class="form__input" placeholder="data:image/png" name="advancedBillboardData" value=""> </span> </p> <p> <button id="openBillboardEditor" class="button style" type="button">Open the Billboard Editor</button> </p><p>_________________________________________________________________</p> <p> <span>F4 - Auto Matchmaker</span> <label for="autoFFA"></label> <span> <input type="checkbox" class="switch_1" name="autoFFA" value="false" id="autoFFA"> </span> </p> <p> <span>Auto Matchmaker Gamemode</span> <label for="matchmakerGamemode"></label> <span class="select-dropdown"> <select name="matchmakerGamemode" id="matchmakerGamemode" class="lyxcompSettingsDropdown"> <option value="0">FFA</option> <option value="1">TDM</option> <option value="2">Point</option> <option value="3">CTF</option> <option value="19">KC</option> <option value="27">Kranked</option> <option value="10">Gun Game</option> <option value="21">Sharp Shooter</option> </select> </span> </p> <p> <span>Matchmaker Minimum Players</span> <label for="matchmakerMinPlayer"></label> <span class="select-dropdown"> <select name="matchmakerMinPlayer" id="matchmakerMinPlayer" class="lyxcompSettingsDropdown"> <option value="0">0</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> </select> </span> </p> </div> </form> </div> </div> </div>';
 // const miscHeader = '<div style="display:inline-block;text-align:right;float:right;"> <div class="settingsBtn" style="width:auto;background-color:#994cd1" onclick="openOneTrust()">Manage Ads</div> <div class="settingsBtn" onclick="resetSettings()">Reset</div> <div class="settingsBtn" onclick="exportSettings()">Export</div> <div class="settingsBtn" onclick="importSettingsPopup()">Import</div> <select id="settingsPreset" onchange="selectSettingPre(this.value)" class="inputGrey2" style="margin-left:0px;font-size:14px" wtx-context="938DBE0F-09D6-4782-82C6-517CD9AB7DA3"> <option value="0">Default</option> <option value="1">Pro</option> <option value="3">Performance</option> <option value="2" selected="">Custom</option> </select> </div> <div style="display:inline-block;width:220px;"> <input id="settSearch" type="text" placeholder="Search" oninput="windows[0].searchList()" wtx-context="4E0956D1-656E-473C-8C15-5D82472C40F3"> </div>';
-const settingsHeader = '<div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(0)">General</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(1)">Controls</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(2)">Display</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(3)">Render</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(4)">Game</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(5)">Sound</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1)">Gato</div>'
+const settingsHeader = '<div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(0)">General</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(1)">Controls</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(2)">Display</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(3)">Render</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(4)">Game</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1);window.windows[0].changeTab(5)">Sound</div> <div class="settingTab " onmouseenter="playTick()" onclick="SOUND.play(&quot;select_0&quot;,0.1)">lyxcomp</div>'
 
 
 // Lets us exit the game lmao
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     updateDetailText.remove();
     const newDetailText = document.createElement("div");
     newDetailText.setAttribute("id", "helpGuidOpn");
-    newDetailText.innerHTML = "Gatoclient Updates";
+    newDetailText.innerHTML = "lyxcomp Updates";
     updateDetailHolder.appendChild(newDetailText);
     updateHolder.setAttribute("style", "display:block!important")
 
@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.querySelectorAll("#endAMerger").forEach((element) => { element.innerHTML = ''; } );
 
     const titleUpdate = setInterval(function () {
-        if (!document.title.includes('Gatoclient')) {
-            document.title = 'Gatoclient | ' + document.title;
+        if (!document.title.includes('lyxcomp')) {
+            document.title = 'lyxcomp | ' + document.title;
         }
     }, 100);
 
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 function OpenChangelog() {
     document.getElementById('menuWindow').setAttribute("style", "padding-top: 20px !important; overflow-y: auto; width: 1200px;");
-    document.getElementById('menuWindow').innerHTML = `<link rel="stylesheet" href="https://creepycats.github.io/api/gatoclient/settings.css"> <div class="backgroundSettings"> <div class="titleHolder"> <img src="https://cdn.discordapp.com/attachments/901905234861883432/907024700880879686/0.png" class="titleImage" width="140" height="140"> <h3 class="title">Gatoclient Changelog</h3> </div> <div class="container"> <div id="content"> <form action=""> <div> <h2>General</h2> <p>CSS is now loaded via the Mod folder (THERE YOU GO LUKE)</p> <p>Disabled Sky color and old billboards cause Developers</p> <p>F8 Key now deletes the stupid ranked stream</p> <p>Tell me whether you want twitch integration or a keyboard overlay first</p> </div> <div> <h2>Fixes</h2> <p>Fixed CSS Loading Issues</p> <p>Fixed Stuck on Initializing...</p> </div> <div> <h2>Notice</h2> <p>Twitch integration soonTM</p> <p>Keyboard overlay integration soonTM</p> </div> </form> </div> </div> </div>`;
+    document.getElementById('menuWindow').innerHTML = `<link rel="stylesheet" href="https://creepycats.github.io/api/lyxcomp/settings.css"> <div class="backgroundSettings"> <div class="titleHolder"> <img src="https://cdn.discordapp.com/attachments/901905234861883432/907024700880879686/0.png" class="titleImage" width="140" height="140"> <h3 class="title">lyxcomp Changelog</h3> </div> <div class="container"> <div id="content"> <form action=""> <div> <h2>General</h2> <p>CSS is now loaded via the Mod folder (THERE YOU GO LUKE)</p> <p>Disabled Sky color and old billboards cause Developers</p> <p>F8 Key now deletes the stupid ranked stream</p> <p>Tell me whether you want twitch integration or a keyboard overlay first</p> </div> <div> <h2>Fixes</h2> <p>Fixed CSS Loading Issues</p> <p>Fixed Stuck on Initializing...</p> </div> <div> <h2>Notice</h2> <p>Twitch integration soonTM</p> <p>Keyboard overlay integration soonTM</p> </div> </form> </div> </div> </div>`;
 }
 
 function UpdateSettingsTabs(activeTab) {
@@ -87,7 +87,7 @@ function UpdateSettingsTabs(activeTab) {
     settingsTab.addEventListener("click", (event) => {
         document.getElementById('settHolder').innerHTML = settingsMenuHTML;
 
-        var form = document.getElementById("gatoclientsettings");
+        var form = document.getElementById("lyxcompsettings");
 
         form.addEventListener("change", function () {
             // Save Preferences/Settings
@@ -105,7 +105,7 @@ function UpdateSettingsTabs(activeTab) {
                 }
             };
             for (var i = 0; i < _dropdowns.length; i++) {
-                if (_dropdowns[i].className == 'gatoSettingsDropdown') {
+                if (_dropdowns[i].className == 'lyxcompSettingsDropdown') {
                     _preferences[_dropdowns[i].name] = _dropdowns[i].value;
                 }
             };
@@ -229,10 +229,10 @@ ipcRenderer.on('preloadSettings', (event, preferences, version, filedir) => {
     }
 
     // Settings button
-    if (userPrefs['disableGatoButton'] != true) {
+    if (userPrefs['disablelyxcompButton'] != true) {
         // Settings Menu Thing
         const menuItem = document.createElement("div");
-        menuItem.setAttribute("id", "gatoMenuItem");
+        menuItem.setAttribute("id", "lyxcompMenuItem");
         menuItem.setAttribute("class", "menuItem");
         menuItem.setAttribute("onclick", "showWindow(1)");
         menuItem.innerHTML = '<img class="material-icons-outlined menBtnIcn" src="https://cdn.discordapp.com/attachments/661004708852269080/899301043672842250/settingIcon.png" onmouseenter="playTick()">';
@@ -245,7 +245,7 @@ ipcRenderer.on('preloadSettings', (event, preferences, version, filedir) => {
 
             ipcRenderer.send('settingsNeedSettings');
 
-            var form = document.getElementById("gatoclientsettings");
+            var form = document.getElementById("lyxcompclientsettings");
 
             form.addEventListener("change", function () {
                 // Save Preferences/Settings
@@ -263,7 +263,7 @@ ipcRenderer.on('preloadSettings', (event, preferences, version, filedir) => {
                     }
                 };
                 for (var i = 0; i < _dropdowns.length; i++) {
-                    if (_dropdowns[i].className == 'gatoSettingsDropdown') {
+                    if (_dropdowns[i].className == 'lyxcompSettingsDropdown') {
                         _preferences[_dropdowns[i].name] = _dropdowns[i].value;
                     }
                 };
@@ -279,8 +279,8 @@ ipcRenderer.on('preloadSettings', (event, preferences, version, filedir) => {
 // CSS
 ipcRenderer.on('injectCSS', (event, css) => {
     let s = document.createElement("style");
-    s.setAttribute("class", "gatoclientCSS");
-    s.setAttribute("id", "gatoclientCSS");
+    s.setAttribute("class", "lyxcompclientCSS");
+    s.setAttribute("id", "lyxcompclientCSS");
     s.innerHTML = css;
     document.getElementsByTagName("body")[0].appendChild(s);
 });
@@ -290,7 +290,7 @@ var elements = null;
 ipcRenderer.on('badges', (event) => {
     const fetch = require('node-fetch');
     let settings = { method: "Get" };
-    let url = "https://creepycats.github.io/api/gatoclient/badges.json";
+    let url = "https://lyxzy.github.io/api/user.json";
     fetch(url, settings)
         .then(res => res.json())
         .then((json) => {

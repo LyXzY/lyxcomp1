@@ -1,7 +1,7 @@
 {
-  "name": "GatoClient",
-  "version": "1.4.3",
-  "description": "Gatoclient Krunker Client by creepycats",
+  "name": "lyxcomp",
+  "version": "1.0.0",
+  "description": "lyxcomp",
   "main": "./app/main.js",
   "scripts": {
     "start": "electron .",
@@ -10,15 +10,14 @@
     "release": "electron-builder --publish always",
     "postinstall": "electron-builder install-app-deps"
   },
-  "author": "creepycatsTTV",
+  "author": "LyXzY",
   "license": "MIT",
-  "homepage": "https://gatohost.tk",
   "keywords": [
     "Krunker"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gatohost/gatoclient.git"
+    "url": "https://github.com/LyXzY/lyxcomp1.git"
   },
   "devDependencies": {
     "electron": "^10.4.7",

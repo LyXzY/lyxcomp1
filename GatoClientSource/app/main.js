@@ -23,9 +23,9 @@ var hasJoined = false;
 
 // Before starting:
 // Create Swapper folders if not existing
-var swapperFolder = path.join(app.getPath("documents"), "GatoclientResourceSwapper/Mod/css");
-var assetSwapperDir = path.join(app.getPath("documents"), "GatoclientResourceSwapper/Mod");
-var billboardFolder = path.join(app.getPath("documents"), "GatoclientResourceSwapper/Mod/textures/pubs");
+var swapperFolder = path.join(app.getPath("documents"), "lyxcompResourceSwapper/Mod/css");
+var assetSwapperDir = path.join(app.getPath("documents"), "lyxcompResourceSwapper/Mod");
+var billboardFolder = path.join(app.getPath("documents"), "lyxcompResourceSwapper/Mod/textures/pubs");
 
 if (!fs.existsSync(swapperFolder)) {
     fs.mkdirSync(swapperFolder, { recursive: true });
@@ -38,15 +38,15 @@ if (!fs.existsSync(billboardFolder)) {
 };
 
 // Before we can read the settings, we need to make sure they exist, if they don't, then we create a template
-if (!fs.existsSync(path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json"))) {
-    fs.writeFileSync(path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json"), '{ "fpsUncap": true, "fullscreen": false, "discordrpc": true, "disableUserBadges": false, "disableEmotes": false,"disableLogoCSS": false, "disableMenuTimer": false, "skyColor": false, "skyColorValue": "#FF0000", "billboard":true, "billboardText":"🐱Gatoclient", "bbTextColor":"#6699FF", "bbBackgroundColor":"#3366CC", "autoFFA":"false" }', { flag: 'wx' }, function (err) {
+if (!fs.existsSync(path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json"))) {
+    fs.writeFileSync(path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json"), '{ "fpsUncap": true, "fullscreen": false, "discordrpc": true, "disableUserBadges": false, "disableEmotes": false,"disableLogoCSS": false, "disableMenuTimer": false, "skyColor": false, "skyColorValue": "#FF0000", "billboard":true, "billboardText":"lyxcomp", "bbTextColor":"#6699FF", "bbBackgroundColor":"#3366CC", "autoFFA":"false" }', { flag: 'wx' }, function (err) {
         if (err) throw err;
         console.log("It's saved!");
     });
 }
 
 // Read settings to apply them to the command line arguments
-let filePath = path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json");
+let filePath = path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json");
 let userPrefs = JSON.parse(fs.readFileSync(filePath));
 
 // Fullscreen Handler
@@ -69,7 +69,7 @@ const setActivity =
                 details: gameInfo.mode ? gameInfo.mode : "Playing Krunker",
                 state: gameInfo.map ? gameInfo.map : "doing the thing!",
                 endTimestamp: Date.now() + gameInfo.time * 1000,
-                largeImageText: "GatoClient",
+                largeImageText: "lyxcomp",
                 largeImageKey: "logo"
             })
         } catch {
@@ -87,27 +87,27 @@ ipcMain.on('savedSettings', (event, preferences) => {
     inputs = preferences;
     console.log(inputs);
     console.log('Saved settings to json...');
-    var settingsPath = path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json");
+    var settingsPath = path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json");
     fs.writeFileSync(settingsPath, JSON.stringify(inputs));
 
     //new Notification({ title: 'Saved!', body: 'Successfully saved settings!' }).show();
 });
 ipcMain.on('preloadNeedSettings', (event) => {
-    mainWindow.webContents.send('preloadSettings', path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json"), app.getVersion(), __dirname);
+    mainWindow.webContents.send('preloadSettings', path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json"), app.getVersion(), __dirname);
 });
 ipcMain.on('settingsNeedSettings', (event) => {
-    mainWindow.webContents.send('settingsSettings', path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json"));
+    mainWindow.webContents.send('settingsSettings', path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json"));
 });
 ipcMain.on('splashNeedInfo', (event) => {
     splashWindow.webContents.send('splashInfo', app.getVersion());
 });
 ipcMain.on('bbNeedSettings', (event) => {
     console.log('Billboards Loaded');
-    mainWindow.webContents.send('bbSettings', path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json"));
+    mainWindow.webContents.send('bbSettings', path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json"));
 });
 ipcMain.on('ffaNeedSettings', (event) => {
     console.log('AutoMatchmaker Loaded');
-    mainWindow.webContents.send('ffaSettings', path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json"));
+    mainWindow.webContents.send('ffaSettings', path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json"));
 });
 
 // Long thing of command lines to disable anything unrequired
@@ -157,7 +157,7 @@ if (userPrefs['disableAccelerated2D'] == true) {
 // Workaround for Electron 8.x
 if (userPrefs['resourceSwapper'] == true) {
     protocol.registerSchemesAsPrivileged([{
-        scheme: "gato-swap",
+        scheme: "lyxcomp-swap",
         privileges: {
             secure: true,
             corsEnabled: true
@@ -168,11 +168,11 @@ if (userPrefs['resourceSwapper'] == true) {
 app.allowRendererProcessReuse = true;
 //Listen for app to get ready
 app.on('ready', function () {
-    let filePath = path.join(app.getPath("documents"), "GatoclientResourceSwapper/settings.json");
+    let filePath = path.join(app.getPath("documents"), "lyxcompResourceSwapper/settings.json");
     let userPrefs = JSON.parse(fs.readFileSync(filePath));
 
     if (userPrefs['resourceSwapper'] == true) {
-        protocol.registerFileProtocol("gato-swap", (request, callback) => callback(decodeURI(request.url.replace(/^gato-swap:/, ""))));
+        protocol.registerFileProtocol("lyxcomp-swap", (request, callback) => callback(decodeURI(request.url.replace(/^lyxcomp-swap:/, ""))));
     }
 
     app.setAppUserModelId(process.execPath);
@@ -223,7 +223,7 @@ app.on('ready', function () {
 
                 if (promptAnswer === 0) {
                     console.log('Redirecting to update page');
-                    electron.shell.openExternal('https://github.com/Gatohost/gatoclient/releases');
+                    electron.shell.openExternal('https://github.com/LyXzY/lyxcomp1/releases');
                     app.exit(0);
                 }
                 if (promptAnswer === 1) {
@@ -281,9 +281,9 @@ app.on('ready', function () {
 
     // CSS
     var cssToLoad = '';
-    var mainCSS = '/* Gatoclient Loading Screen */ #initLoader{ background-image: url(https://media.discordapp.net/attachments/661004708852269080/867827020884213780/Screenshot_2021-07-22_131147.png?width=932&height=467)!important; background-size:cover; } #loadInfoRHolder{ background-color:#0000003b; padding: 10px 10px; } #loadInfoLHolder{ background-color:#0000003b; padding: 10px 10px; } #loadTipsHolder{ background-color:#0000003b; padding: 10px 10px; } #loadInfoLHolder::after{ position:fixed; background-color:#0000003b; padding: 10px 10px; content: "Gatoclient by creepycatsttv"; width:370px; bottom: -0.8%; left: 50%; transform: translate(-50%, -50%); } #aHider{ display:none!important; } /* Gatoclient Branding */ #mapInfo::before { visibility: visible; z-index:100; content: "Gatoclient | "; width:600px; bottom: 75px; font-size:20px; display: } /* Flashing Updates Box */ #updateAd{ box-shadow:unset; animation-name:freeKRPulse; animation-duration:2s; animation-iteration-count:infinite } #gatoMenuItem > img.menBtnIcn { -webkit-user-select: none; -webkit-user-drag: none; -webkit-app-region: no-drag; } /* Gatoclient Badges */ #gatoDeveloper::before{ background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905274946846790/gatobadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #gatoQT::before{ background-image: url(https://cdn.discordapp.com/emojis/903049364304461834.png?size=96); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #gatoCC::before{ background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905273302683678/ccbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #gatoKDev::before{ background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905273839583283/devbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #gatoWinner::before{ background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905270349889618/winnerbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #gatoRanked::before{ background-image: url(https://cdn.discordapp.com/emojis/902679654073241630.png?size=96); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); }';
+    var mainCSS = '/* lyxcomp Loading Screen */ #initLoader{ background-image: url(https://media.discordapp.net/attachments/661004708852269080/867827020884213780/Screenshot_2021-07-22_131147.png?width=932&height=467)!important; background-size:cover; } #loadInfoRHolder{ background-color:#0000003b; padding: 10px 10px; } #loadInfoLHolder{ background-color:#0000003b; padding: 10px 10px; } #loadTipsHolder{ background-color:#0000003b; padding: 10px 10px; } #loadInfoLHolder::after{ position:fixed; background-color:#0000003b; padding: 10px 10px; content: "lyxcomp"; width:370px; bottom: -0.8%; left: 50%; transform: translate(-50%, -50%); } #aHider{ display:none!important; } /* lyxcomp */ #mapInfo::before { visibility: visible; z-index:100; content: "lyxcomp | "; width:600px; bottom: 75px; font-size:20px; display: } /* Flashing Updates Box */ #updateAd{ box-shadow:unset; animation-name:freeKRPulse; animation-duration:2s; animation-iteration-count:infinite } #lyxcompMenuItem > img.menBtnIcn { -webkit-user-select: none; -webkit-user-drag: none; -webkit-app-region: no-drag; } /* lyxcomp Badges */ #lyxcompDeveloper::before{ background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905274946846790/gatobadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #lyxcompQT::before{ background-image: url(https://cdn.discordapp.com/emojis/903049364304461834.png?size=96); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #lyxcompCC::before{ background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905273302683678/ccbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #lyxcompKDev::before{ background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905273839583283/devbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #lyxcompWinner::before{ background-image: url(https://cdn.discordapp.com/attachments/901905234861883432/901905270349889618/winnerbadge.png); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); } #lyxcompRanked::before{ background-image: url(https://cdn.discordapp.com/emojis/902679654073241630.png?size=96); background-size: 75% 100%; background-repeat: no-repeat; content: "eee";font-size: 31;color: rgba(0, 0, 0, 0); }';
     var menuTimerCSS = '/* Menu Timer */ #uiBase.onMenu #spectateUI { display: block !important; } #uiBase.onMenu #spectateUI > :not(#spectateHUD) { display: none !important; } #uiBase.onMenu #spectateHUD > :not(.spectateInfo, #specGMessage) { display: none !important; } #uiBase.onMenu #specTimer { font-size: 28px; text-align: center; position: fixed; transform: translateX(-50%); left: 50%; top: 20px; width: 221px; height: 89px; padding: 20px; margin:0; border-radius: 0; background-color: transparent; will-change: unset; text-shadow: 2px 2px 3px rgba(30, 30, 30, .5); } #uiBase.onMenu #spectateHUD { transform:translate(-50%,-50%); position:fixed; top:55%; z-index:999}';
-    var logoCSS = '/* Gatoclient Logo */ #mainLogo{ content: url(https://cdn.discordapp.com/attachments/661004708852269080/859574411770200064/logo_1.png); }'
+    var logoCSS = '/* lyxcomp Logo */ #mainLogo{ content: url(https://cdn.discordapp.com/attachments/661004708852269080/859574411770200064/logo_1.png); }'
 
     // Main CSS
     cssToLoad += mainCSS;
@@ -378,16 +378,16 @@ app.on('ready', function () {
         }
 
         for (var i = 0; i < 13; i++) {
-            downloadImage(bburl, path.join(app.getPath("documents"), `GatoclientResourceSwapper/Mod/textures/pubs/b_${i}.png`));
+            downloadImage(bburl, path.join(app.getPath("documents"), `lyxcompResourceSwapper/Mod/textures/pubs/b_${i}.png`));
         }
     }
     else {
         for (var i = 0; i < 13; i++) {
-            if (fs.existsSync(path.join(app.getPath("documents"), `GatoclientResourceSwapper/Mod/textures/pubs/b_${i}.png`))) {
-                fs.unlinkSync(path.join(app.getPath("documents"), `GatoclientResourceSwapper/Mod/textures/pubs/b_${i}.png`), function (err) {
+            if (fs.existsSync(path.join(app.getPath("documents"), `lyxcompResourceSwapper/Mod/textures/pubs/b_${i}.png`))) {
+                fs.unlinkSync(path.join(app.getPath("documents"), `lyxcompResourceSwapper/Mod/textures/pubs/b_${i}.png`), function (err) {
                     console.log(err);
                 });
-                console.log("Deleted " + path.join(app.getPath("documents"), `GatoclientResourceSwapper/Mod/textures/pubs/b_${i}.png`));
+                console.log("Deleted " + path.join(app.getPath("documents"), `lyxcompResourceSwapper/Mod/textures/pubs/b_${i}.png`));
             }
         }
     }
@@ -399,7 +399,7 @@ app.on('ready', function () {
         let swapper = new Swapper(
             mainWindow,
 			/** @type {string} */("normal"),
-			/** @type {string} */(path.join(app.getPath("documents"), "GatoclientResourceSwapper/Mod"))
+			/** @type {string} */(path.join(app.getPath("documents"), "lyxcompResourceSwapper/Mod"))
         );
         swapper.init();
     }
@@ -464,10 +464,6 @@ app.on('ready', function () {
         });
     }
 
-    ipcMain.on('openBillboardEditor', (event) => {
-        console.log('Billboard Editor Loaded');
-        openSocialPage('https://creepycats.github.io/pages/gatoclient/billboard/index.html');
-    });
 
     // Handle Social Page Switching
     socialWindow.webContents.on("new-window", (event, url) => {
