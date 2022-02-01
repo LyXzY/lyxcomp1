@@ -1,6 +1,6 @@
 {
   "name": "lyxcomp",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "idk, just a Krunker client",
   "main": "./app/main.js",
   "private": true,
@@ -16,7 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lyxzy/lyxcomp1.git"
+    "url": "git+https://github.com/LyXzY/lyxcomp1.git"
+  },
+  "publish": {
+  "provider": "github",
+  "releaseType": "release"
   },
   "keywords": [
     "Krunker"
