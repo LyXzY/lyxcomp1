@@ -1,5 +1,5 @@
 "use strict";
-
+let fsp = require("fs").promises;
 let fs = require("fs");
 let path = require("path");
 
@@ -18,7 +18,7 @@ class PathUtils {
 	 * @returns {Promise<boolean>}
 	 * @memberof PathUtils
 	 */ // @ts-ignore
-	static #fileExists = p => fs.promises.access(p, fs.constants.F_OK);
+	static #fileExists = p => fsp.access(p, fs.constants.F_OK);
 
 
 	/**
@@ -34,7 +34,7 @@ class PathUtils {
 		return new Promise((resolve, reject) => {
 			paths.forEach(async p => {
 				try {
-					await this.#fileExists(p).catch(async() => await fs.promises.mkdir(p, { recursive: true }));
+					await this.#fileExists(p).catch(async() => await fsp.mkdir(p, { recursive: true }));
 					return resolve();
 				}
 				catch (err){
