@@ -1,6 +1,6 @@
 {
   "name": "lyxcomp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "idk, just a Krunker client",
   "main": "./app/main.js",
   "private": true,
@@ -19,8 +19,8 @@
     "url": "git+https://github.com/LyXzY/lyxcomp1.git"
   },
   "publish": {
-  "provider": "github",
-  "releaseType": "release"
+    "provider": "github",
+    "releaseType": "release"
   },
   "keywords": [
     "Krunker"
@@ -33,7 +33,7 @@
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-private-methods": "^7.13.0",
     "@types/node": "^14.17.11",
-    "electron": "^13.2.2",
+    "electron": "^10.4.7",
     "electron-builder": "^22.11.7",
     "eslint": "^8.7.0"
   },
