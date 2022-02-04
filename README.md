@@ -81,7 +81,7 @@ See the [open issues](https://github.com/LyXzY/lyxcomp1/issues) for a list of pr
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/LyXzY/lyxcomp1/blob/main/LICENSE.md) for more information.
+ See [LICENSE](https://github.com/LyXzY/lyxcomp1/blob/main/LICENSE.md) for more information.
 
 ## Authors
 
