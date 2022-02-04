@@ -41,7 +41,7 @@ class IpcLoader {
 	 */
 	static initRpc(config) {
 		let rpcHandler = new RPCHandler(
-			"770954802443059220",
+			"938952732616831037",
 			/** @type {boolean} */
 			(config.get("discordRPC", true))
 		);
