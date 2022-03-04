@@ -1,6 +1,6 @@
 {
   "name": "lyxcomp",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "somehow works",
   "main": "./app/main.js",
   "private": true,
