@@ -60,12 +60,12 @@ NPM is needed, the rest will be installed automatically
 git clone https://github.com/LyXzY/lyxcomp1.git
 ```
 
-3. Install NPM packages
+2. Install NPM packages
 
 ```sh
 npm install
 ```
-4. Build Project
+3. Build Project
 
 ```sh
 npm run dist
