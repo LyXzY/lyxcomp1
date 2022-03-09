@@ -19,13 +19,13 @@ class WindowManager {
 	 * @param {boolean} [hideKrunkerWindowsOnShow=true] - Should the created popup hide, when a krunker popup is opened? Default=Yes
 	 * @memberof WindowManager
 	 */
-	constructor(callerId, hideKrunkerWindowsOnShow = true){
+	constructor(callerId, hideKrunkerWindowsOnShow = true) {
 		this.callerId = callerId;
 		this.hideOnShow = hideKrunkerWindowsOnShow;
 		this.shown = false;
 
 		document.addEventListener("DOMContentLoaded", () => {
-			if (!document.getElementById("lyxcomp-windowHolder")){
+			if (!document.getElementById("lyxcomp-windowHolder")) {
 				let w = document.createElement("div");
 				w.setAttribute("id", "lyxcomp-windowHolder");
 				w.setAttribute("style", "display: none;");
@@ -64,7 +64,7 @@ class WindowManager {
 	 * @param {string} content
 	 * @memberof WindowManager
 	 */
-	setContent(content){
+	setContent(content) {
 		document.getElementById("lyxcomp-menuWindow").innerHTML = content;
 	}
 
@@ -73,7 +73,7 @@ class WindowManager {
 	 *
 	 * @memberof WindowManager
 	 */
-	show(){
+	show() {
 		if (this.hideOnShow) document.getElementById("windowHolder").setAttribute("style", "display: none;");
 		document.getElementById("lyxcomp-windowHolder").setAttribute("style", "display: block;");
 		this.shown = true;
@@ -84,7 +84,7 @@ class WindowManager {
 	 *
 	 * @memberof WindowManager
 	 */
-	hide(){
+	hide() {
 		document.getElementById("lyxcomp-windowHolder").setAttribute("style", "display: none;");
 		this.shown = false;
 	}
@@ -95,7 +95,7 @@ class WindowManager {
 	 *
 	 * @memberof WindowManager
 	 */
-	toggle(){
+	toggle() {
 		this.shown ? this.hide() : this.show();
 	}
 
@@ -105,7 +105,7 @@ class WindowManager {
 	 * @returns {boolean} shown
 	 * @memberof WindowManager
 	 */
-	isShown(){
+	isShown() {
 		return this.shown;
 	}
 }

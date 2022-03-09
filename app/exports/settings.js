@@ -157,6 +157,7 @@ module.exports = {
 			return UtilManager.instance.clientUtils.genCSettingsHTML(this);
 		}
 	},
+	
 	enableUserscripts: {
 		name: "Enable Userscripts",
 		id: "enableUserscripts",
@@ -207,5 +208,5 @@ module.exports = {
 		html() {
 			return UtilManager.instance.clientUtils.genCSettingsHTML(this);
 		}
-	}
+	},
 };

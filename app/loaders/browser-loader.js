@@ -295,7 +295,7 @@ class BrowserLoader {
 		let contents = win.webContents;
 
 		async function autoUpdate() {
-			return new fs.Promise((resolve, reject) => {
+			return new Promise((resolve, reject) => {
 				if (shouldAutoUpdate === "skip") return resolve();
 
 				return contents.on("dom-ready", () => {

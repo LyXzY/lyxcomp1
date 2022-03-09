@@ -1,6 +1,6 @@
 {
   "name": "lyxcomp",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "somehow works",
   "main": "./app/main.js",
   "private": true,
@@ -43,6 +43,7 @@
     "electron-log": "^4.3.5",
     "electron-store": "^8.0.0",
     "electron-updater": "^5.0.0",
+    "tmi": "^2.0.0",
     "v8-compile-cache": "^2.3.0",
     "yargs": "^17.1.1"
   }

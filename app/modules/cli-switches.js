@@ -29,6 +29,9 @@ let cliSwitchHandler = function(app, config){
 		(config.get("chromiumFlags", "")),
 		(_, argv) => Object.entries(argv).slice(1, -1).forEach(entry => app.commandLine.appendSwitch(entry[0], entry[1]))
 	);
+	
+
+	
 };
 
 module.exports = cliSwitchHandler;

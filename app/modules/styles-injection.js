@@ -3,20 +3,14 @@
 /* 200IQ */
 
 const baseStyles = `
-#settingsTabLayout {
-	grid-template-columns: repeat(8, 1fr)
-}
-
 #settingsTabLayout>div:nth-last-child(2) {
 	display: none
 }
-
 #lyxcomp-windowHolder {
 	width: 100%;
 	height: 100%;
 	position: absolute
 }
-
 #lyxcomp-menuWindow {
 	position: absolute;
 	left: 50%;
@@ -35,9 +29,8 @@ const baseStyles = `
 	background-color: #353535;
 	box-shadow: 0 9px 0 0 #a6a6a6
 }
-
 /* Temporal workaround for "No settings found" appearing in lyxcomp tab all the time */
-div.setHed:first-child:not(:only-child) {
+#settHolder > .setHed:first-child:not(:only-child, [id]) {
 	display: none;
 }
 `;
@@ -46,15 +39,12 @@ const menuTimerStyles = `
 #uiBase.onMenu #spectateUI {
 	display: block !important;
 }
-
 #uiBase.onMenu #spectateUI > :not(#spectateHUD) {
 	display: none !important;
 }
-
 #uiBase.onMenu #spectateHUD > :not(.spectateInfo, #specGMessage) {
 	display: none !important;
 }
-
 #uiBase.onMenu #specTimer {
 	font-size: 28px;
 	text-align: center;
@@ -71,7 +61,6 @@ const menuTimerStyles = `
 	will-change: unset;
 	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
 }
-
 #uiBase.onMenu #spectateHUD {
 	transform:translate(-50%,-50%);
 	position:fixed;
