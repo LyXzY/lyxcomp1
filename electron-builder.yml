@@ -16,7 +16,7 @@ mac:
     - target: default
       arch:
         - x64
-		- arm64
+        - arm64
 linux:
   artifactName: ${productName}-portable-${os}-${arch}.${ext}
   target:
