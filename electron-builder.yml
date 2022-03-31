@@ -13,9 +13,10 @@ win:
 mac:
   artifactName: ${productName}-portable-${os}-${arch}.${ext}
   target:
-    - target: dmg
+    - target: default
       arch:
         - x64
+		- arm64
 linux:
   artifactName: ${productName}-portable-${os}-${arch}.${ext}
   target:
