@@ -55,6 +55,7 @@ class UtilManager {
 			.map(() => validChars[Math.floor(Math.random() * validChars.length)])
 			.join("");
 	}
+	
 }
 
 module.exports = UtilManager;

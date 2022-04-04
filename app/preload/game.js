@@ -27,6 +27,8 @@ Object.assign(window[UtilManager.instance._utilKey], {
 
 let accountManager = new AccountManager();
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
 	let windowsObserver = new MutationObserver(() => {
 		windowsObserver.disconnect();
@@ -35,7 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	windowsObserver.observe(document.getElementById("instructions"), { childList: true });
 
 	accountManager.injectStyles();
+	
 });
+
+// on first run after install or update init settings
 
 UtilManager.instance.clientUtils.events.on("game-load", () => {
 	/** @type {object} */
@@ -80,3 +85,4 @@ UtilManager.instance.clientUtils.events.on("game-load", () => {
 		return tempHTML ? tempHTML + "</div>" : "";
 	};
 });
+

@@ -27,6 +27,11 @@ let userscriptsDirConfig = (config.get("userscriptsPath", ""));
 const userscriptsDir = PathUtils.isValidPath(userscriptsDirConfig) ? userscriptsDirConfig : path.join(app.getPath("documents"), "lyxcomp/scripts");
 cliSwitches(app, config);
 
+
+
+
+
+
 if (process.platform === "win32"){
 	app.setUserTasks([{
 		program: process.execPath,
@@ -70,9 +75,12 @@ let init = function(){
 				BrowserLoader.initWindow(String(instanceArgv["new-window"]), config);
 			}
 		});
-
+		
 		BrowserLoader.initSplashWindow(app.isPackaged ? String(argv.update || config.get("autoUpdate", "download")) : "skip", config);
+		
 	});
 };
+
+
 
 init();
